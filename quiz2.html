@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAN-LP Fragen</title>
+    <style>
+        /* Grundlegendes Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hintergrund und allgemeine Schrift */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 40px 0px 30px 0px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /*height: 100%;*/
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Startbildschirm */
+        #start-screen {
+            display: block;
+        }
+
+        #quiz-screen, #result-screen {
+            display: none;
+        }
+
+        /* Buttons */
+        .button-bronze {
+            background-color: #9a661d;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            width: 80%;
+        }
+        
+        .button-bronze:hover {
+            background-color: #bf8970;
+        }
+        
+        .button-silver {
+            background-color: #aaacb2;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 80%;
+        }
+        
+        .button-silver:hover {
+            background-color: #d8d9db;
+        }
+        
+        .button-gold {
+            background-color: #cfa959;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-bottom: 2cm;
+            width: 80%;
+        }
+        
+        .button-gold:hover {
+            background-color: #d8c49a;
+        }
+        
+        
+        .button {
+            background-color: #A72920;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 100%;
+            /*max-width: 250px;*/
+        }
+
+        .button:hover {
+            background-color: #c34140;
+        }
+
+
+        /* Fragenbereich */
+        .question {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .answer-options {
+            margin-top: 20px;
+            display: flex;
+            font-size: 1.25rem;
+            flex-direction: column;
+            align-items: flex-start;
+            accent-color: #A72920;
+        }
+
+        .answer-options label {
+            background-color: #f9f9f9;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            width: 100%;
+            display: flex;
+            /*align-items: center;*/
+            text-align: left;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .answer-options input {
+            margin-right: 10px;
+        }
+
+        .answer-options label:hover {
+            background-color: #efefef;
+        }
+
+        .answer-options input:checked + label {
+            background-color: #f1f1f1;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .info {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .author {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* Ergebnis */
+        #result-screen {
+            text-align: center;
+        }
+
+
+        /* Medienabfragen für mobile Anpassungen */
+        @media (max-width: 800px) {
+            .container {
+                padding: 20px;
+            }
+
+/*
+            .button {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 26px;
+            }
+*/
+            .answer-options label {
+                padding: 10px;
+            }
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #A72920;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #a0a0a0;
+            text-align: center;
+        }
+        
+        .bottom-space {
+            margin-bottom: 2cm;
+        }
+        
+        #snackbar {
+          visibility: hidden;
+          min-width: 250px;
+          margin-left: -125px;
+          background-color: #008754;
+          color: #fff;
+          text-align: center;
+          border-radius: 50px;
+          padding: 16px;
+          position: fixed;
+          z-index: 1;
+          left: 50%;
+          bottom: 80px;
+          font-size: 1.5rem;
+        }
+
+        #snackbar.show {
+          visibility: visible;
+          -webkit-animation: fadein 0.25s, fadeout 0.25s 0.75s;
+          animation: fadein 0.25s, fadeout 0.25s 0.75s;
+        }
+
+        @-webkit-keyframes fadein {
+          from {bottom: 0; opacity: 0;} 
+          to {bottom: 80px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+          from {bottom: 0; opacity: 0;}
+          to {bottom: 80px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+          from {bottom: 80px; opacity: 1;} 
+          to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+          from {bottom: 80px; opacity: 1;}
+          to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Startbildschirm -->
+    <div id="start-screen" class="container">
+        <h2>Fragen</h2>
+        <h1>SAN</h1>
+        <h2 class=bottom-space>Leistungsprüfung</h2>
+
+        <button class="button-bronze" onclick="startQuiz('bronze')">BRONZE</button>
+        <button class="button-silver" onclick="startQuiz('silber')">SILBER</button>
+        <button class="button-gold" onclick="startQuiz('gold')">GOLD</button>
+        <div class="author">v1.0 &copy; Thomas Schwar</div>
+    </div>
+
+    <!-- Quiz -->
+    <div id="quiz-screen" class="container">
+        <div id="text" class="info">Frage 1 von 20</div>
+        <div id="timer" class="timer">00:00</div>
+        <div id="question-container">
+            <div class="question" id="question-text"></div>
+            <div class="answer-options" id="answer-options"></div>
+        </div>
+        <button class="button" id="next-question-btn" onclick="buttonNext()">Antwort anzeigen</button>
+    </div>
+
+    <!-- Endbildschirm -->
+    <div id="result-screen" class="container">
+        <h1 class=bottom-space>Ergebnis</h1>
+        <h2 id="correct-answers"></h2>
+        <h2 class=bottom-space id="time-taken"></h2>
+        <button class="button" onclick="restartQuiz()">Zurück</button>
+    </div>
+    
+    <div id="snackbar">.</div>
+
+    <script>
+        const allQuestions = {
+            bronze: [
+            {
+               question: "In welchem Abstand vom Unfallgeschehen wird bei einem Verkehrsunfall das Warndreieck aufgestellt?",
+               options: [ "Ortsgebiet 10 m (in beiden Richtungen), Landstraße 50 m (in beiden Richtungen), Autobahn/Schnellstraße 100 m",
+                        "Ortsgebiet ca. 50 m (in beiden Richtungen), Landstraße ca. 150 m (in beiden Richtungen), Autobahn/Schnellstraße ca. 250 m bis ca. 400 m",
+                        "Ortsgebiet 100 m (in beiden Richtungen), Landstraße 200 m (in beiden Richtungen), Autobahn/Schnellstraße 500 m",
+                        "Ortsgebiet 25 m (in beiden Richtungen), Landstraße 65 m (in beiden Richtungen), Autobahn/Schnellstraße 150 m" ],
+               correct: [ false, true, false, false]},{
+
+                question: "Was besagt die Kemler-Nummer?",
+                options: [ "Nummer zur Kennzeichnung des Stoffes",
+                        "Allgemeiner Hinweis auf das Gefahrengut",
+                        "Chemische Bezeichnung des transportierten Stoffes",
+                        "Die Gefährlichkeit eines Stoffes"],
+                correct: [ false, false, false, true]},{
+
+                question: "Welche Erste Hilfe Ausrüstung schützt den Helfer vor Infektionen?",
+                options: [ "Beatmungstuch",
+                        "Einmalhandschuhe",
+                        "Taschentuch",
+                        "Warnblinkanlage"],
+                correct: [ true, true, false, false]},{
+
+                question: "Welche Farben haben die Warntafeln bei Gefahrenguttransporten?",
+                options: [ "Blau",
+                        "Orange mit schwarzer Umrandung",
+                        "Rot",
+                        "Gelb"],
+                correct: [ false, true, false, false]},{
+
+                question: "Nennen Sie Möglichkeiten einer raschen Rettung aus der Gefahrenzone (Crash-Rettung)?",
+                options: [ "Rautekgriff",
+                        "Wegziehen",
+                        "Ast-Trage",
+                        "Tragegurt"],
+                correct: [ true, true, false, false]},{
+
+                question: "Welche Beschwerden erhärten den Verdacht auf Herzinfarkt?",
+                options: [ "Kopfschmerzen und Ohrensausen",
+                        "Atemnot und Engegefühl im Brustbereich",
+                        "Stechende und brennende Schmerzen in der Herzgegend",
+                        "Vernichtungsgefühl und Todesangst"],
+                correct: [ false, true, true, true]},{
+
+                question: "Welche Beschwerden erhärten den Verdacht auf Schlaganfall?",
+                options: [ "Halbseitenlähmung, Gesichtslähmung",
+                        "Querschnittslähmung",
+                        "akute Bauchschmerzen",
+                        "Hängender Mundwinkel, Sprachstörung, Bewusstseinsstörung"],
+                correct: [ true, false, false, true]},{
+
+                question: "Welche Erste-Hilfe-Maßnahmen sind bei einem Sonnenstich oder Hitzschlag durchzuführen?",
+                options: [ "Betroffenen an einen kühlen/schattigen Ort bringen, mit kalten, feuchten Tüchern kühlen",
+                        "Lagerung mit erhöhtem Oberkörper, beengende Kleidungsstücke öffnen bzw. entfernen.",
+                        "Notruf",
+                        "Den Patienten nicht bewegen"],
+                correct: [ true,true, true, false]},{
+
+                question: "Nennen Sie die allgemeinen Erste-Hilfe-Maßnahmen bei Knochen- und Gelenksverletzungen!",
+                options: [ "Bei offenen Verletzungen keimfreien Verband anlegen und bei Schwellungen kalte Unschläge",
+                        "Beengende Kleidungsstücke über der Verletzung lockern",
+                        "Ruhigstellung",
+                        "Schockbekämpfung/Basismaßnahmen und Notruf"],
+                correct: [ true, true, true, true]},{
+
+                question: "Nennen Sie mögliche Kennzeichen bei Verdacht auf eine Wirbelsäulenverletzung!",
+                options: [ "Kribbeln oder Gefühllosigkeit in Armen und Beinen",
+                        "Krampfanfälle",
+                        "Schmerzen im Rückenbereich, gegebenenfalls Unvermögen, sich aufzurichten bzw. die Beine zu bewegen",
+                        "Lähmungserscheinungen, Atemnot"],
+                correct: [ true, false, true, true]},{
+
+                question: "Woran erkennen Sie eine Knochen- und Gelenksverletzung?",
+                options: [ "Schmerzen, Schwellung, Schonhaltung",
+                        "abnorme Stellung",
+                        "vermehrte Beweglichkeit",
+                        "Bewegungsunfähigkeit oder Bewegungseinschränkung"],
+                correct: [ true, true, false, true]},{
+
+                question: "In welche Lage ist ein bewusstloser Notfallpatient zu bringen?",
+                options: [ "Stabile Seitenlage zum Freihalten der Atemwege",
+                        "Auf den Rücken mit überstrecktem Kopf zur Erleichterung der Atmung",
+                        "Flache Rückenlagerung und Beine hoch lagern",
+                        "Erhöhter Oberkörper - ist die optimale Lagerung"],
+                correct: [ true, false, false, false]},{
+
+                question: "Nennen Sie die wichtigsten Lebensfunktionen!",
+                options: [ "Bewusstsein, Atmung und Kreislauf",
+                        "Essen und Trinken",
+                        "Wärmehaushalt, Säure-Basen-Haushalt und Stoffwechsel",
+                        "Sauerstoff und Wasser"],
+                correct: [ true, false, false, false]},{
+
+                question: "Sie stellen bei einem Patienten die Notfalldiagnose Atem-Kreislauf-Stillstand fest. Nennen Sie die Erste-Hilfe-Maßnahmen (=lebensrettende Sofortmaßnahmen). Sie sind alleine am Notfallort!",
+                options: [ "Zweimalige Beatmung und danach den Notfallpatienten in die stabile Seitenlage bringen",
+                        "Notruf - um rasch einen Defibrillator am Notfallort zur Verfügung zu haben, fehlende Atmung und Kreislauf durch Herzdruckmassage und Beatmung ersetzen.",
+                        "Zeigt der Notfallpatient während der Durchführung der Maßnahmen eine normale Atmung, so ist er in die stabile Seitenlage zu bringen!",
+                        "Diese Maßnahmen werden bis zur Übernahme der Reanimation durch eine Ablösemannschaft oder einen professionellen Rettungsdienst durchgeführt."],
+                correct: [ false, true, true, true]},{
+
+                question: "Welche Symptome zeigt ein \"bewusstloser Notfallpatient\"?",
+                options: [ "Atemzeichen fehlen, Bewusstsein fehlt",
+                        "Atem- und Kreislaufzeichen feststellbar, reagiert auf Ansprechen",
+                        "Bewusstsein fehlt, normale Atemzeichen eindeutig feststellbar",
+                        "Atemzeichen feststellbar, Bewusstseinslage kann durch den Ersthelfer nicht überprüft werden"],
+                correct: [ false, false, true, false]},{
+
+                question: "Wie ist die Kontrolle des Bewusstseins durchzuführen?",
+                options: [ "Notfallpatient rütteln, massieren, Schmerzreiz setzen",
+                        "Notfallpatient laut ansprechen, berühren, sanftes schütteln an der Schulter",
+                        "Pupillenreflexe des Patienten mit einer Taschenlampe überprüfen",
+                        "Bewusstsein kann nicht festgestellt werden."],
+                correct: [ false, true, false, false]},{
+
+                question: "Wie oft atmet ein Erwachsener (=Atemzüge) pro Minute im Ruhezustand?",
+                options: [ "ca. 25 mal pro Minute",
+                        "ca. 12 mal pro Minute",
+                        "ca. 40 mal pro Minute",
+                        "ca. 5 mal pro Minute"],
+                correct: [ false, true, false, false]},{
+
+                question: "Wie oft muss die Herzdruckmassage (Frequenz) pro Minute bei einem Erwachsenen Notfallpatienten durchgeführt werden?",
+                options: [ "100 – 120 mal pro Minute",
+                        "etwa 70-mal pro Minute bis max. 90-mal pro Minute",
+                        "60-mal pro Minute",
+                        "50-mal pro Minute"],
+                correct: [ true, false, false, false]},{
+
+                question: "Nennen Sie die Erste-Hilfe-Maßnahmen zur Schockbekämpfung/Basismaßnahmen.",
+                options: [ "Rasche, exakte Blutstillung, Wundversorgung, schmerzfreie Lagerung",
+                        "Zudecken des Verletzten, Frischluftzufuhr in geschlossenen Räumen, guten Zuspruch und Beruhigen, für Ruhe sorgen",
+                        "Öffnen beengender Kleidungsstücke",
+                        "Anhalten des Verletzten zu ruhiger, langsamer Atmung"],
+                correct: [ true, true, true, true]},{
+
+                question: "Nennen Sie lebensbedrohliche Folgen eines Schocks!",
+                options: [ "Kreislaufversagen",
+                        "Sehstörungen",
+                        "Bewusstlosigkeit",
+                        "Tod"],
+                correct: [ true, false, true, true]},{
+
+                question: "Nennen Sie die Zeichen eines im Schockzustand befindlichen Notfallpatienten!",
+                options: [ "Blasse, kalte, schweißige Haut",
+                        "Fieber im septischen Schock möglich",
+                        "Teilnahmslosigkeit oder im Gegenteil eine auffallende Unruhe",
+                        "Kann nur vom Rettungssanitäter oder Notfallsanitäter festgestellt werden"],
+                correct: [ true, true, true, false]},{
+
+                question: "Nennen Sie die Erste-Hilfe-Maßnahmen bei Verätzungen!",
+                options: [ "Kleider nicht entfernen, um nicht die bereits geschädigte Haut weiter zu verletzen",
+                        "Weitere Schockbekämpfung/Basismaßnahmen und Notruf",
+                        "Sofort mit reinem Wasser intensiv spülen, darauf achten, dass das abfließende Wasser den kürzesten Weg über die Haut nimmt, um unverletzte Körperstellen zu schützen, Selbstschutz beachten!",
+                        "Sofort die mit ätzender Substanz getränkte Kleidung entfernen"],
+                correct: [ false, true, true, true]},{
+
+                question: "Warum ist eine schwere Verbrennung abhängig von der Ausdehnung lebensbedrohlich?",
+                options: [ "Blutverlust",
+                        "Sauerstoffmangel durch Ausfall der Hautatmung",
+                        "Auflösung der roten Blutkörperchen (Erythrozyten)",
+                        "Verbrennungsschock, Infektionsgefahr"],
+                correct: [ false, false, false, true]},{
+
+                question: "Welche Körperstellen sind besonders bei einer Erfrierung gefährdet?",
+                options: [ "Körperstellen, die von eng anliegender Bekleidung (z. B. Schuhwerk) umgeben sind",
+                        "Rücken",
+                        "Körperstellen, die von locker sitzender Bekleidung umgeben sind, da diese wenig Kälteschutz bietet",
+                        "Besonders gefährdet sind Körperstellen, die wenig Schutz durch Muskulatur und Gewebe haben (Zehen, Finger, Wangen, Nase und Ohren)"],
+                correct: [ true,false, false, true]},{
+
+                question: "Nennen Sie die Erste-Hilfe-Maßnahmen bei einer starken Blutung am Unterschenkel!",
+                options: [ "Verletzten niederlegen",
+                        "Verletzten stehen lassen",
+                        "Der Ersthelfer soll nur den Notruf absetzen",
+                        "Bein hoch lagern und manuellen Druck ausüben / Druckverband anlegen"],
+                correct: [ true,false, false, true]},{
+
+                question: "Nennen Sie die Gefahren, die bei einer starken Blutung entstehen können!",
+                options: [ "Tod",
+                        "Kreislaufversagen",
+                        "Schockzustand",
+                        "Unterkühlung"],
+                correct: [ true,true, true, false]},{
+
+                question: "Nennen Sie die Möglichkeiten zur Blutstillung bei einer starken Blutung!",
+                options: [ "Abbindeversuche mit Draht oder Rettungsleine",
+                        "Manueller Druck",
+                        "Druckverband",
+                        "Es ist nur das Hochlagern der verletzten Extremität notwendig"],
+                correct: [ false,true, true, false]},{
+
+                question: "Ist Kohlendioxid schwerer oder leichter als Luft bzw. wo kann sich dieses Gas in einem Raum ansammeln?",
+                options: [ "Schwerer als Luft und sammelt sich unten an",
+                        "Leichter als Luft und sammelt sich oben",
+                        "Gleich schwer wie Luft und verteilt sich gleichmäßig",
+                        "Schwerer als Luft und sammelt sich oben"],
+                correct: [ true,false, false, false]},{
+
+                question: "Erste-Hilfe-Maßnahmen, wenn der vergiftete Notfallpatient reglos ist!",
+                options: [ "Giftentfernung durch provoziertes Erbrechen, Notruf",
+                        "Zu Beginn Kontrolle der Lebensfunktionen (Notfallcheck) und wenn nötig, lebensrettende Sofortmaßnahmen durchführen, Notruf",
+                        "Vergiftungsinformationszentrale (VIZ) 01 - 406 43 43 befragen",
+                        "Patienten in der vorgefundenen Lage belassen, nicht anrühren und sofort den Notruf absetzen"],
+                correct: [ false,true, false, false]},{
+
+                question: "Beschreiben Sie das Prinzip der Wundversorgung!",
+                options: [ "Fremdkörper in der Wunde belassen",
+                        "Kein Anwenden von Salben, Pudern…",
+                        "Kein Berühren der Wunde",
+                        "Einmalhandschuhe für den Ersthelfer nicht unbedingt notwendig"],
+                correct: [ true,true, true, false]},{
+
+                question: "Nennen Sie den richtigen Druckpunkt bei der Herzdruckmassage beim Erwachsenen!",
+                options: [ "Mitte des Brustbeines-Verbindungslinie der Brustwarzen",
+                        "Anfang der unteren Hälfte des Brustbeines-zwei Fingerbreit davon korrekt abmessen",
+                        "Mitte des Brustkorbes",
+                        "Obere Hälfte des Brustbeines"],
+                correct: [ false,false, true, false]},{
+
+                question: "Wodurch können Verbrennungen bzw. Verbrühungen entstehen?",
+                options: [ "Kontakt mit elektrischen Strom",
+                        "Heiße Flüssigkeiten bzw. heiße Dämpfe",
+                        "Hitzestrahlung",
+                        "Flüssig gelagerte Gase"],
+                correct: [ true,true, true, false]},{
+
+                question: "Was ist zu tun, wenn die Kleidung einer Person Feuer gefangen hat?",
+                options: [ "Betroffene auf den Boden wälzen",
+                        "Brennende Person am Weglaufen hindern",
+                        "Flammen mit geeigneten Tüchern, Decken oder Kleidungsstücken ersticken",
+                        "Gar nichts, da diese Situation eine Gefahr für den Helfer darstellt"],
+                correct: [ true,true, true, false]},{
+
+                question: "Nennen Sie die Gefahren bei einer Unterkühlung!",
+                options: [ "Bewusstlosigkeit, Atem-Kreislauf-Stillstand infolge Absinkens der Körpertemperatur unter 30 Grad Celsius",
+                        "Lebensbedrohliche Steigerung der Atem- und Kreislauffrequenz",
+                        "Schock",
+                        "Absinken der Körpertemperatur"],
+                correct: [ true,false, true, true]},{
+
+                question: "Nennen Sie die Maßnahmen durch den Ersthelfer, wenn der Abtransport eines Unterkühlten in absehbarer Zeit nicht möglich ist (z.B. Gebirge)!",
+                options: [ "Den Unterkühlten, wenn möglich, an einen windstillen Ort oder in einen warmen Raum (Schutzhütte) bringen. Heiße Getränke verabreichen, warme, trockene Umschläge auf Brust, Bauch und Nacken legen",
+                        "Alkohol verabreichen, massieren – frottieren",
+                        "Kalte, nasse Kleidung vorsichtig entfernen – in angewärmte Decken hüllen und Eventuell Erfrierungen keimfrei verbinden",
+                        "Den Unterkühlten ständig bewegen"],
+                correct: [ true,false, true, false]},{
+
+                question: "Was ist zu tun, wenn es trotz eines angelegten Druckverbandes weiterhin stark blutet?",
+                options: [ "Auf den Rettungsdienst warten",
+                        "Sofort den Druckverband entfernen und einen neuen, festeren anlegen",
+                        "Einen zweiten Druckverband darüberlegen oder manuellen Druck ausüben, Wirkung des Druckverbandes ständig kontrollieren",
+                        "Kalte Umschläge anlegen"],
+                correct: [ false,false, true, false]},{
+
+                question: "Nennen Sie die Erste Hilfe Maßnahmen, die nach einem Biss einer heimischen Giftschlange durchzuführen sind!",
+                options: [ "Verletzten Körperteil ruhig stellen, warme Umschläge auf die Bissstelle, Schockbekämpfung / Basismaßnahmen",
+                        "Verletzten Körperteil ruhig stellen, kalte Umschläge auf die Bissstelle, Schockbekämpfung / Basismaßnahmen, Notruf",
+                        "Verletzten Körperteil heftig bewegen lassen, kalte Umschläge auf die Bissstelle, Schockbekämpfung / Basismaßnahmen, Transport durchführen",
+                        "Bisswunde aussaugen, Gliedmaßen abbinden, kalte Umschläge auf die Bissstelle, Schockbekämpfung / Basismaßnahmen, Transport ins Krankenhaus veranlassen"],
+                correct: [ false,true, false, false]},{
+
+                question: "Welche Gefahren bestehen bei einem Insektenstich?",
+                options: [ "Wundinfektion",
+                        "Schock",
+                        "Akute Erstickungsgefahr durch Schwellung",
+                        "HIV (Aids) Infektion"],
+                correct: [ true,true, true, false]},{
+
+                question: "Worauf sollte der Feuerwehrsanitäter im Einsatz achten?",
+                options: [ "Ausrüstung vor der Ersten Hilfeleistung Kontrollieren",
+                        "Hektik verbreiten",
+                        "Mit den anderen Feuerwehrsanitätern über die Verletzungen und deren Folgen neben dem Verletzten zu Diskutieren",
+                        "Ruhiges und Kompetentes Arbeiten an der Verletzten Person. Bis weitere Hilfe kommt den Betroffenen beruhigen und beobachten"],
+                correct: [ false,false, false, true]},{
+
+                question: "Was bewirkt die Wasseranwendung bei Verbrennungen bzw. wie und wann muss diese durchgeführt werden?",
+                options: [ "Verhindert das Nachbrennen im Gewebe und führt zur Schmerzlinderung",
+                        "So lange unter reines, fließendes Wasser halten, bis der Schmerz nachlässt",
+                        "Führt zu einer erhöhten Infektionsgefahr und Blutvergiftung",
+                        "Wenn der Patient fröstelt, die Kühlung stoppen"],
+                correct: [ true,true, false, true]}
+            ],
+            silber: [
+                {
+                question: "Welche Symptome erhärten den Verdacht auf einen Beckenbruch?",
+                options: [ "Kann die Zehen nicht bewegen",
+                        "Schmerzen in der Halswirbelsäule",
+                        "Gefühllosigkeit in Armen und Beinen",
+                        "Instabiles Becken, Schmerzen im Bereich des Beckens und der Beine"],
+                correct: [ false,false, false, true]},{
+
+                question: "Warum müssen Patienten mit Verdacht auf Wirbelsäulenverletzung besonders sorgfältig versorgt werden?",
+                options: [ "Starke Ohrenschmerzen",
+                        "Durch unsachgemäße Rettung oder Lagerung kann es zu weiteren Zusatzverletzungen kommen",
+                        "Bei Verletzung der Halswirbelsäule besteht im Fall einer Rückenmarksschädigung die Gefahr einer Atemstörung bzw. einer bleibenden Querschnittslähmung",
+                        "Gefahr von Kreislaufstörungen"],
+                correct: [ false,true, true, false]},{
+
+                question: "Welchen Grundsatz soll jeder Helfer in einer Gefahrenzone beachten?",
+                options: [ "Reinigen der Gerätschaften noch in der Gefahrenzone",
+                        "Selbstschutz geht vor Fremdschutz",
+                        "Fremdschutz geht vor Eigenschutz",
+                        "Betreten der Gefahrenzone nur mit Atemschutzgerät"],
+                correct: [ false,true, false, false]},{
+
+                question: "Welcher Sicherheitsabstand ist bei Unfällen mit gefährlichen Gütern einzuhalten?",
+                options: [ "Mindestens 10-20 m",
+                        "Mindestens 30-60 m",
+                        "Mindestens 60 m",
+                        "Mindestens 100 m"],
+                correct: [ false,false, true, false]},{
+
+                question: "Beschreiben Sie die Technik der Herzdruckmassage beim Erwachsenen in der Ersten Hilfe!",
+                options: [ "Be- und Entlastungsphase sollen gleich lang sein, rhythmische Durchführung der Herzdruckmassage, seitlich vom Notfallpatienten knien",
+                        "Möglichst kurze und kräftige Be- und Entlastungsphase zur Erzielung hoher Blutdruckwerte",
+                        "Notfallpatienten auf eine harte, unnachgiebige Unterlage legen, Handballen einer Hand auf die Mitte des Brustkorbes legen, ohne mit den Fingern den Brustkorb zu berühren. Handballen der anderen Hand wird darübergelegt",
+                        "Bei gestreckten Armen wird nun ein so starker Druck senkrecht auf das Brustbein ausgeübt, dass dieses 5 - 6 cm niedergedrückt wird. Frequenz der Herzdruckmassage: mind. 100/min. - max. 120/min."],
+                correct: [ true,false, true, true]},{
+
+                question: "Sie bedienen einen Defibrillator und das Gerät empfiehlt nach der Analyse die Schockabgabe. Welche Sicherheitsvorkehrungen haben Sie vor dem Elektroschock zu berücksichtigen?",
+                options: [ "Der Ersthelfer muss darauf achten, dass niemand den Patienten während der Defibrillation berührt",
+                        "Den Patienten nicht berühren",
+                        "Den Notfallpatienten nicht defibrillieren, wenn er leitend mit dem Ersthelfer (=Anwender des Geräts) oder anderen Helfern verbunden ist",
+                        "Der Ersthelfer berührt während der Schockabgabe den Notfallpatienten, um die Wirkung des Elektroschocks überprüfen zu können"],
+                correct: [ true,true, true, false]},{
+
+                question: "Wann dürfen Sie nicht defibrillieren?",
+                options: [ "Es gibt keine Kontraindikationen - Die Defibrillation darf immer durchgeführt werden",
+                        "z.B. im explosionsgefährdeten Bereich",
+                        "z.B. Patient liegt auf Eisenbahnschienen",
+                        "z.B. Patient liegt in einer Wasserlacke oder auf nassem Untergrund"],
+                correct: [ false,true, true, true]},{
+
+                question: "Warum werden beim Überstrecken des Kopfes in den Nacken die Atemwege frei?",
+                options: [ "Die Speiseröhre wird voll geöffnet",
+                        "Es wird verhindert, dass der Unterkiefer zurücksinkt und die Atemwege verlegt",
+                        "Da Fremdkörper im Rachen entfernt werden",
+                        "Die zurückgesunkene Zunge entfernt sich von der Rachenhinterwand und die Atemwege werden frei"],
+                correct: [ false,false, false, true]},{
+
+                question: "Welche Lagerungsart wird bei einer Bauchverletzung und erhaltenem Bewusstsein angewendet?",
+                options: [ "Stabile Seitenlage",
+                        "Bauchlage",
+                        "Rückenlage mit angezogenen Beinen (Deckenrolle) und leicht erhöhtem Oberkörper",
+                        "Jene Lage, die für den Notfallpatienten am schmerzfreisten ist"],
+                correct: [ false,false, true, true]},{
+
+                question: "Wie wird die Mund-zu-Mund-Beatmung durchgeführt?",
+                options: [ "Stofftaschentuch über die Nase des Notfallpatienten legen, der Helfer kniet oberhalb des Kopfes des Notfallpatienten, verschließt mit Daumen und Zeigefinger die Nase und überstreckt den Kopf, der Helfer beatmet über den leicht geöffneten Mund des Notfallpatienten",
+                        "Der Helfer hebt nach der Beatmung seinen Kopf und beobachtet das Ausströmen der Luft aus der Nase des Notfallpatienten durch Sehen der Bewegungen des Kopfes",
+                        "Der Helfer hebt nach der Beatmung seinen Kopf nicht, um das Ausströmen der Luft aus der Lunge des Notfallpatienten an seinen Lippen und seiner Wange zu spüren, der Vorgang wird bei Erwachsenen ca. 10- mal in der Minute wiederholt. Dieser Rhythmus entspricht dem natürlichen Atemrhythmus des Helfers",
+                        "Beatmungsfolie über Mund und Nase des Notfallpatienten legen, der Helfer kniet seitlich vom Kopf des Notfallpatienten, überstreckt den Kopf und verschließt mit Daumen und Zeigefinger die Nase, der Helfer beatmet durch den leicht geöffneten Mund des Notfallpatienten"],
+                correct: [ false,false, false, true]}
+             ],
+            gold: [
+                {
+                question: "Nennen Sie die richtigen Maßnahmen bei Rauchgasvergiftung.",
+                options: [ "Möglichst lange nicht atmen",
+                        "sofort Erbrechen auslösen",
+                        "Notruf über Einsatzleitung / Florianstation / Arzt verständigen",
+                        "rasche Sauerstoffgabe, tiefe langsame Atmung, sitzend mit Oberkörper erhöht (ca. 90 Grad)"],
+                correct: [ false, false, true, true]},{
+
+                question: "Wo kommt Kohlendioxid vor?",
+                options: [ "in Stollen und Brunnenschächten",
+                        "laufender Motor in geschlossenen Garagen",
+                        "in Gärkellern (von Wein- und Mostkellereien)",
+                        "in Jauchegruben"],
+                correct: [ true,false, true, true]},{
+
+                question: "Woran kann man eine Vergiftung erkennen?",
+                options: [ "Bewusstseinsstörung, Erregungs-/Rauschzustände, Übelkeit/Erbrechen",
+                        "Hinweis durch Umstände eines Unglücks (regloser Mensch in Garage bei laufendem Motor)",
+                        "Hautveränderung, Pupillenveränderung, Atem-/Kreislaufstörung",
+                        "zunehmendes Hungergefühl"],
+                correct: [ true,true, true, false]},{
+
+                question: "Wann muss der Helm auf jeden Fall abgenommen werden?",
+                options: [ "Wenn kein Bewusstsein festgestellt werden kann",
+                        "Wenn der Notfallpatient bei Bewusstsein ist.",
+                        "Wenn der Notfallpatient Bauchschmerzen hat.",
+                        "Keinem Verunfallten muss der Helm sofort abgenommen werden."],
+                correct: [ true,false, false, false]},{
+
+                question: "Wann muss ein Notfallpatient unbedingt auf den Rücken gedreht werden?",
+                options: [ "Wenn er nicht ansprechbar, also bewusstlos ist – um weitere Lebensfunktionen zu kontrollieren.",
+                        "Wenn er nicht gerne am Bauch liegt.",
+                        "Wenn er Bauchschmerzen hat.",
+                        "Jeder Verletzte muss auf den Rücken gedreht werden."],
+                correct: [ true,false, false, false]},{
+
+                question: "Nennen Sie die Kennzeichen, die auf eine Quetschung hindeuten lassen.",
+                options: [ "Blaurote Verfärbung (Bluterguss)",
+                        "Gefühllosigkeit",
+                        "Abnorme Stellung",
+                        "Schwellung, Schmerzen"],
+                correct: [ true,false, false, true]},{
+
+                question: "Innerhalb welcher Zeit sollte eine Wunde spätestens vom Arzt versorgt werden?",
+                options: [ "Innerhalb von 2 Stunden",
+                        "Innerhalb von 4 Stunden",
+                        "Innerhalb von 6 Stunden",
+                        "Innerhalb von 24 Stunden"],
+                correct: [ false,false, true, false]},{
+
+                question: "Wie hoch ist die Puls und die Atemfrequenz eines Erwachsenen im Ruhezustand?",
+                options: [ "Puls 60 bis 100 / Atmung 12 bis 15",
+                        "Puls 10 bis 12 / Atmung 60 bis 100",
+                        "Puls 50 bis 55 / Atmung 5 bis 10",
+                        "Puls 120 bis 180 / Atmung 15 bis 30"],
+                correct: [ true,false, false, false]},{
+
+                question: " Warum kann ein Zeckenbiss gefährlich sein?",
+                options: [ "Übertragung von Tollwut",
+                        "Übertragung von anderen Krankheiten (z. B. Borreliose)",
+                        "Übertragung von FSME",
+                        "Übertragung von Wundstarrkrampf"],
+                correct: [ false,true, true, false]},{
+
+                question: "Darf der Ersthelfer defibrillieren?",
+                options: [ "Die Defibrillation darf vom Ersthelfer angewendet werden, wenn der AED die Schockabgabe empfiehlt.",
+                        "Die Defibrillation darf nur von einem Rettungssanitäter angewendet werden.",
+                        "Die Defibrillation darf nur vom Arzt angewendet werden",
+                        "Die Defibrillation darf nur angewendet werden, wenn ein Arzt anwesend ist."],
+                correct: [ true,false, false, false]}
+             ]
+        };
+
+        let selectedDifficulty = '';
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+        let startTime = 0;
+        let timerInterval = null;
+
+        let checkAnswers = true;
+        let examMode = false;
+        
+        function showSnack(text) {
+          var x = document.getElementById("snackbar");
+          x.innerText = text;
+          x.className = "show";
+          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
+        }
+
+        // Start Quiz
+        function startQuiz(difficulty) {
+            selectedDifficulty = difficulty;
+            
+            currentQuestions = [...allQuestions.bronze];
+            
+            if(selectedDifficulty == 'silber') {
+                currentQuestions = currentQuestions.concat(allQuestions.silber);
+                console.log(currentQuestions)
+            }
+            else if(selectedDifficulty == 'gold') {
+                currentQuestions = currentQuestions.concat(allQuestions.silber, allQuestions.gold);
+            }
+            
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            startTime = Date.now();
+
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'block';
+            displayQuestion();
+            startTimer();
+        }
+
+        // Display the current question
+        function displayQuestion() {
+            const question = currentQuestions[currentQuestionIndex];
+            document.getElementById('question-text').innerText = question.question;
+            const optionsContainer = document.getElementById('answer-options');
+            optionsContainer.innerHTML = '';
+            question.options.forEach((option, index) => {
+                const label = document.createElement('label');
+                label.classList.add('answer-option');
+                label.innerHTML = `
+                    <input type="checkbox" id="option${index}" data-index="${index}">
+                    ${option}
+                `;
+                optionsContainer.appendChild(label);
+            });
+
+            document.getElementById('next-question-btn').innerText = examMode ? 'Nächste Frage' : 'Überprüfen';
+            document.getElementById('next-question-btn').style.display = 'inline-block';
+            document.getElementById('text').innerText = `Frage ${currentQuestionIndex + 1} von ${currentQuestions.length}`;
+            checkAnswers = true;
+        }
+        
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuestions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        // Handle next question button click
+        function buttonNext() {
+            if(checkAnswers) {
+                const question = currentQuestions[currentQuestionIndex];
+                const selectedOptions = [...document.querySelectorAll('#answer-options input:checked')].map(input => parseInt(input.getAttribute('data-index')));
+                const unselectedOptions = [...document.querySelectorAll('#answer-options input:not(:checked)')].map(input => parseInt(input.getAttribute('data-index')));
+                const correct = selectedOptions.every(index => question.correct[index]);
+                const incorrect = unselectedOptions.every(index => !question.correct[index]);
+                
+                if (correct && incorrect) {
+                    correctAnswersCount++;
+                    if(!examMode) {
+                        showSnack("Richtig!");
+                    }
+                    nextQuestion(); 
+                } else {
+                    if(examMode) {
+                        nextQuestion(); 
+                    } else {
+                        showFeedback();
+                        checkAnswers = false;
+                    }
+                }
+            } else {
+                checkAnswers = true;
+                nextQuestion();
+            }
+        }
+
+        // Show feedback for answers (color only)
+        function showFeedback() {
+            const question = currentQuestions[currentQuestionIndex];
+
+            // Mark answers with green or red based on correctness
+            question.options.forEach((option, index) => {
+                const isCorrect = question.correct[index];
+                const optionLabel = document.querySelector(`#option${index}`).parentNode;
+                optionLabel.style.color = isCorrect ? 'green' : 'red'; // Grün für richtig, Rot für falsch
+            });
+            
+            document.getElementById('next-question-btn').innerText = 'Nächste Frage';
+        }
+        
+        function pad(num, size) {
+            num = num.toString();
+            while (num.length < size) num = "0" + num;
+            return num;
+        }
+
+        // Start timer
+        function startTimer() {
+            const timerDisplay = document.getElementById('timer');
+            timerInterval = setInterval(() => {
+                var date = new Date(Date.now() - startTime);
+                var minute = date.getUTCMinutes();
+                var sec = date.getUTCSeconds();
+                timerDisplay.innerText = `${pad(minute, 2)}:${pad(sec, 2)}`;
+            }, 1000);
+        }
+
+        // End Quiz
+        function endQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+
+            document.getElementById('correct-answers').innerText = `Richtige Antworten:\n ${correctAnswersCount} von ${currentQuestions.length}`;
+            /*const totalTime = Math.floor((Date.now() - startTime) / 1000);*/
+            var date = new Date(Date.now() - startTime);
+            var minute = date.getUTCMinutes();
+            var sec = date.getUTCSeconds();
+            totalTime = `${pad(minute, 2)}:${pad(sec, 2)}`;
+            
+            document.getElementById('time-taken').innerText = `\nZeit: ${totalTime}`;
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            document.getElementById('result-screen').style.display = 'none';
+            document.getElementById('start-screen').style.display = 'block';
+        }
+
+    </script>
+
+</body>
+</html>
+
