@@ -342,7 +342,7 @@
         <button class="button-silver" onclick="startQuiz('silber')">SILBER</button>
         <button class="button-gold" onclick="startQuiz('gold')">GOLD</button>
         <div class="author">v1.0 &copy; Thomas Schwar</div>
-        <div class="author">nach RL – 5.8 / 40-2012 vom 23.05.2024</div>
+        <div class="author">nach LFV Steiermark RL – 5.8 / 40-2012 vom 23.05.2024</div>
     </div>
 
     <!-- Quiz -->
@@ -367,7 +367,8 @@
     <div id="snackbar">.</div>
 
     <script>
-        const allQuestions = [
+        const allQuestions = {
+        silber: [
         {
             question:  "Wer übernimmt die Absicherung der Einsatzstelle?",
             options: [
@@ -525,7 +526,7 @@
             ]
         },
         {
-            question: "Was ist die Zändtemperatur?",
+            question: "Was ist die Zündtemperatur?",
             options: [
                 "niedrigste Temperatur, bei der sich ein brennbarer Stoff an Luft entzündet",
                 "mittlere Temperatur, bei der sich ein brennbarer Stoff an Luft entzündet",
@@ -542,7 +543,7 @@
             options: [
                 "mindestens 30 Meter",
                 "allgemein ca. 100 Meter",
-                "aufLandes-, und Bundesstraßen ca. 150 - 250 m, auf Autobahnen 250 - 400 m"
+                "auf Landes-, und Bundesstraßen ca. 150 - 250 m, auf Autobahnen 250 - 400 m"
             ],
             correct: [
                 false,
@@ -1147,7 +1148,8 @@
                 false,
                 false
             ]
-        },
+        } ],
+        gold: [
         {
             question: "Was bedeutet Hybrid Antrieb?",
             options: [
@@ -1322,7 +1324,7 @@
             options: [
                 "ausschließlich im Wasserbehälter abstellen",
                 "keine besonderen Maßnahmen erforderlich",
-                "nicht unter Dächern und min, 5 m Abstand von Gebäuden oder anderen KFZ einhalten"
+                "nicht unter Dächern und min. 5 m Abstand von Gebäuden oder anderen KFZ einhalten"
             ],
             correct: [
                 false,
@@ -1538,7 +1540,7 @@
                 false
             ]
         }
-        ];
+        ]};
         
         const examQuestionCnt = [ 1, 1, 1 ];
         const examTime = [ 1, 1, 1 ];
@@ -1583,7 +1585,12 @@
             randomQ = document.getElementById('examSim').checked
             var idx_step = 0;
             
-            currentQuestions = allQuestions;
+            currentQuestions = [...allQuestions.silber];
+            
+            if(selectedDifficulty == 'gold') {
+                currentQuestions = currentQuestions.concat(allQuestions.gold);
+                idx_step = 1;
+            }
             
             if(randomQ) {
                 shuffle(currentQuestions);
@@ -1729,4 +1736,3 @@
 
 </body>
 </html>
-
