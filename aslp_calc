@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASLP Fragen</title>
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,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">
+<style>
+    /* Grundlegendes Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Hintergrund und allgemeine Schrift */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 40px 0px 30px 0px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /*height: 100%;*/
+            max-width: 800px;
+            text-align: center;
+        }
+
+        /* Startbildschirm */
+        #start-screen {
+            display: block;
+        }
+
+        #quiz-screen, #result-screen {
+            display: none;
+        }
+
+        /* Buttons */
+        .button-bronze {
+            background-color: #9a661d;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            margin-top: 20px;
+            width: 80%;
+        }
+        
+        .button-bronze:hover {
+            background-color: #bf8970;
+        }
+        
+        .button-silver {
+            background-color: #aaacb2;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 80%;
+        }
+        
+        .button-silver:hover {
+            background-color: #d8d9db;
+        }
+        
+        .button-gold {
+            background-color: #cfa959;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            margin-bottom: 2cm;
+            width: 80%;
+        }
+        
+        .button-gold:hover {
+            background-color: #d8c49a;
+        }
+        
+        
+        .button {
+            background-color: #A72920;
+            color: #fff;
+            justify-content: center;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            width: 100%;
+            /*max-width: 250px;*/
+        }
+
+        .button:hover {
+            background-color: #c34140;
+        }
+
+
+        /* Fragenbereich */
+        .question {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .answer-options {
+            margin-top: 20px;
+            display: flex;
+            font-size: 1.25rem;
+            flex-direction: column;
+            align-items: flex-start;
+            accent-color: #A72920;
+        }
+
+        .answer-options label {
+            background-color: #f9f9f9;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 8px;
+            width: 100%;
+            display: flex;
+            /*align-items: center;*/
+            text-align: left;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .answer-options input {
+            margin-right: 10px;
+        }
+
+        .answer-options label:hover {
+            background-color: #efefef;
+        }
+
+        .answer-options input:checked + label {
+            background-color: #f1f1f1;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .info {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #666;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .author {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #666;
+        }
+
+        /* Ergebnis */
+        #result-screen {
+            text-align: center;
+        }
+
+
+        /* Medienabfragen für mobile Anpassungen */
+        @media (max-width: 800px) {
+            .container {
+                padding: 20px;
+            }
+
+/*
+            .button {
+                font-size: 20px;
+            }
+
+            .question {
+                font-size: 26px;
+            }
+*/
+            .answer-options label {
+                padding: 10px;
+            }
+        }
+        
+        h1 {
+            font-size: 4rem;
+            color: #A72920;
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #a0a0a0;
+            text-align: center;
+        }
+        
+        .bottom-space {
+            margin-bottom: 2cm;
+        }
+        
+        #snackbar {
+          visibility: hidden;
+          min-width: 250px;
+          margin-left: -125px;
+          background-color: #008754;
+          color: #fff;
+          text-align: center;
+          border-radius: 50px;
+          padding: 16px;
+          position: fixed;
+          z-index: 1;
+          left: 50%;
+          bottom: 80px;
+          font-size: 1.5rem;
+        }
+
+        #snackbar.show {
+          visibility: visible;
+          -webkit-animation: fadein 0.25s, fadeout 0.25s 0.75s;
+          animation: fadein 0.25s, fadeout 0.25s 0.75s;
+        }
+
+        @-webkit-keyframes fadein {
+          from {bottom: 0; opacity: 0;} 
+          to {bottom: 80px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+          from {bottom: 0; opacity: 0;}
+          to {bottom: 80px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+          from {bottom: 80px; opacity: 1;} 
+          to {bottom: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+          from {bottom: 80px; opacity: 1;}
+          to {bottom: 0; opacity: 0;}
+        }
+        
+        
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 80%;
+          height: 2.75rem;
+          margin-bottom: 2cm;
+        }
+
+        .switch input {display:none;}
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #A72920;
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 34px;
+        }
+
+        
+        input:checked + .slider {
+          background-color: #eaeaea;
+        }
+
+
+
+        /*------ ADDED CSS ---------*/
+        .slider:after
+        {
+         content:'Fragen üben';
+         color: white;
+         display: block;
+         position: absolute;
+         transform: translate(-50%,-50%);
+         top: 50%;
+         left: 50%;
+         font-family: Verdana, sans-serif;
+         font-size: 1.5rem;
+        }
+
+        input:checked + .slider:after
+        {  
+          content:'Prüfung simulieren';
+          color: #A72920;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Startbildschirm -->
+    <div id="start-screen" class="container">
+        <h2>Fragen</h2>
+        <h1>Atemschutz</h1>
+        <h2 class=bottom-space>Leistungsprüfung</h2>
+        
+        <label class="switch">
+        <input type="checkbox" id="examSim">
+        <div class="slider round"></div>
+        </label>
+
+        <button class="button-bronze" onclick="startQuiz('bronze')">BRONZE</button>
+        <button class="button-silver" onclick="startQuiz('silber')">SILBER</button>
+        <button class="button-silver" onclick="startQuiz('silber_gkdt')">SILBER (GKDT)</button>
+        <button class="button-gold" onclick="startQuiz('gold')">GOLD</button>
+        <div class="author">v1.0 &copy; Thomas Schwar</div>
+        <div class="author">nach RL 5.2/16-2007 vom 24.03.2022</div>
+    </div>
+
+    <!-- Quiz -->
+    <div id="quiz-screen" class="container">
+        <div id="text" class="info">Frage 1 von 20</div>
+        <div id="timer" class="timer">00:00</div>
+        <div id="question-container">
+            <div class="question" id="question-text"></div>
+            <div class="answer-options" id="answer-options"></div>
+        </div>
+        <button class="button" id="next-question-btn" onclick="buttonNext()">Antwort anzeigen</button>
+    </div>
+
+    <!-- Endbildschirm -->
+    <div id="result-screen" class="container">
+        <h1 class=bottom-space>Ergebnis</h1>
+        <h2 id="correct-answers"></h2>
+        <h2 class=bottom-space id="time-taken"></h2>
+        <button class="button" onclick="restartQuiz()">Zurück</button>
+    </div>
+    
+    <div id="snackbar">.</div>
+
+    <script>
+        const allQuestions = {
+            bronze: [
+            {
+                question:  "Woraus setzt sich die Umgebungsluft (Einatemluft) zusammen?",
+                options: [
+                     "17 %Sauerstoff, 78 % Stickstoff, 4,00 % Kohlenstoffdioxid, 1,00 % Edelgas",
+                     "21 % Sauerstoff, 78 % Stickstoff, 0,04 % Kohlenstoffdioxid, 0,96 % Edelgase",
+                     "21 % Stickstoff, 78 % Sauerstoff, 0,04 % Kohlenstoffdioxid, 0,96 % Edelgase"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wie kann eine Atemkrise ausgelöst werden?",
+                options: [
+                     "Durch eine falsche Atemtechnik (z.B. durch flaches, hastiges Atmen) bzw. Sauerstoffmangel",
+                     "Gar nicht",
+                     "Durch zu viel Feuchtigkeit in der Atemluft"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wie lange kann ein Mensch ohne Sauerstoff (Atmung), ohne Schäden zu bekommen, auskommen?",
+                options: [
+                     "ca. 3 Minuten",
+                     "ca. 5 Minuten",
+                     "ca. 1,5 Minuten"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Aus welchen Bestandteilen setzt sich die ausgeatmete Atemluft zusammen?",
+                options: [
+                     "14% Sauerstoff, 81 %Stickstoff, 4,00% Edelgase, 1% Kohlenstoffdioxid",
+                     "20% Sauerstoff, 79 %Kohlenstoffdioxid, 1 % Stickstoff",
+                     "17% Sauerstoff, 78 % Stickstoff, 4.04 % Kohlenstoffdioxid, 0,96% Edelgase"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Welches Atemgift wirkt nur auf die äußere Atmung?",
+                options: [
+                     "Kohlenstoffdioxid (CO₂)",
+                     "Kohlenstoffmonoxid (CO)",
+                     "Blausäuredämpfe (HCN)"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Was sind Atemschutzgeräte?",
+                options: [
+                     "Geräte, mit welchen man sich vor heißer Einatemluft schützt",
+                     "Geräte, welche es ermöglichen, sich in nicht atembarer Atmosphäre aufzuhalten",
+                     "Geräte, für Gas- und Taucheinsätze"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welche Schutzwirkung hat der Pressluftatmer?",
+                options: [
+                     "Schützt den Träger vor Pressluft",
+                     "Schützt den Träger vor Atemgiften und Sauerstoffmangel",
+                     "Kann Schadstoffe aus der Umgebungsluft filtern"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wann muss man die Atemmasken reinigen und überprüfen?",
+                options: [
+                     "Nach jeder Verwendung",
+                     "Monatlich",
+                     "4-mal im Jahr"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Welcher Sauerstoffgehalt ist für den Einsatz von Filtergeräten bzw. Brandfluchthauben",
+                options: [
+                     "mindestens 15Vol% Sauerstoff",
+                     "mindestens 17Vol% Sauerstoff",
+                     "mindestens 21Vol% Sauerstoff"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welche Prüfungen müssen nach einem Atemschutzeinsatz durchgeführt werden, um den Pressluftatmer wieder zu verwenden?",
+                options: [
+                     "Sichtprüfung, Flaschenventilprüfung, Überprüfung der Warneinrichtung",
+                     "Überprüfung des Flaschendruckes und Sichtprüfung, Warnsignal Funktionstest",
+                     "Sichtprüfung (NSG, Haltegurt), Flaschendruckprüfung, Hochdruckdichtprüfung, Flaschenventilprüfung, Warnsignal Funktionstests"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Wie viel Druckabfall ist bei der Hochdruckdichtprüfung innerhalb einer Minute maximal zulässig?",
+                options: [
+                     "20 bar",
+                     "10 bar",
+                     "gar keiner"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welchen Mindestdruck benötigen Pressluftatmer (PA) um einsatzbereit zu sein?",
+                options: [
+                     "Mind. 200 bar beim 200 bar PA und mind. 300 bar beim 300 bar PA",
+                     "Mind. 180 bar beim 200 bar PA und mind. 270 bar beim 300 bar PA",
+                     "Mind. 150 bar beim 200 bar PA und mind. 250 bar beim 300 bar PA"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welcher Druck ist für den Rückmarsch des AS-Trupps erforderlich?",
+                options: [
+                     "Mindestens 60 bar",
+                     "Rückmarschdruck= doppelter Vormarschdruckabfall, bzw. spätestens beim Ansprechen des akustischen Warnsignals",
+                     "Mindestens 50 bar"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welchen Zweck erfüllen Brandfluchthauben?",
+                options: [
+                     "Sie dienen zum Retten von Personen aus sicheren Bereichen durch leicht verrauchte (unsichere) Bereiche mit mind. 17Vol% Sauerstoff ins Freie bzw. sicheren Brandabschnitt",
+                     "Sie verhindern das unkontrollierte Flüchten von Personen bei Brandeinsätzen",
+                     "Sie dienen dem Einsatzleiter als Erkundungsgerät, welcher der beste Fluchtweg ist Bereiche mit mind. 17Vol% Sauerstoff ins Freie bzw. sicheren Brandabschnitt"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wozu dient ein Notsignalgeber?",
+                options: [
+                     "Zur Kennzeichnung des Atemschutzgeräteträgers",
+                     "Zur Warnung des Trupps, das eine aufgefundene Person bereits tot sein könnte",
+                     "Zur manuellen oder automatischen Abgabe eines Notsignales"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Wozu dient ein Atemschutz-Außenüberwachungsgerät (AÜwG)?",
+                options: [
+                     "Zur Kontrolle der Bewegung der Atemschutztrupps",
+                     "Zur Kontrolle der Einsatzzeit (Resteinsatzzeit) und Registrierung der AS-Geräteträger",
+                     "Zur Kontrolle des Rettungstrupps"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wann darf ein Atemschutzeinsatz begonnen werden?",
+                options: [
+                     "Wenn es der Einsatzleiter befiehlt",
+                     "Wenn ein Rettungstrupp vor Ort ist bzw. sich auf der bestätigten Anfahrt befindet",
+                     "Wenn mind. zwei Atemschutzgeräteträger verfügbar sind"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wie oft muss jeder Atemschutzträger eine Atemschutzübung machen?",
+                options: [
+                     "2-mal im Jahr",
+                     "1-mal monatlich",
+                     "1-mal in 3 Jahren"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wie sichert sich ein Atemschutztrupp seinen Rückmarschweg?",
+                options: [
+                     "Mittels Bandschlingen",
+                     "Durch markieren mit Leuchtmittel",
+                     "Mittels Schlauchleitung oder Leine"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Aus wie vielen Personen besteht in der Regel ein Atemschutztrupp?",
+                options: [
+                     "Drei",
+                     "Vier",
+                     "Zwei"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Dürfen Pressluftflaschen vollkommen entleert werden?",
+                options: [
+                     "Nein, ein Restdruck muss erhalten bleiben",
+                     "Ja, um die Luftqualität sicher zu stellen",
+                     "Nein, der Druck in der Flasche muss min. 50 bar betragenRichtlinie Atemschutzleistungsprüfung"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wie verhält sich der Atemschutztrupp, wenn bei einem Atemschutzgeräteträger (AGT) die Restdruckwarneinrichtung (akustisches Warnsignal) anspricht?",
+                options: [
+                     "Der Truppführer wird informiert und der Auftrag weiter ausgeführt",
+                     "Der gesamte Trupp tritt nach Meldung an den GK den Rückzug an",
+                     "Der Geräteträger bei dem das Warnsignal angesprochen hat, tritt den Rückzug sofort an."
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welche Aufgabe hat der Atemschutz-Truppführer (ASTRF) unter anderen?",
+                options: [
+                     "Funkgerät bedienen, Strahlrohr führen, Türen öffnen, Leinen tragen, Verletzte Personen",
+                     "Regelmäßige Druckkontrolle und rechtzeitiger Antritt des Rückzuges",
+                     "Er ist für das Funktionieren der Geräte im Trupp verantwortlich"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Was versteht man unter Atemschutztauglichkeit?",
+                options: [
+                     "positiver AKL-Test, ÖFAST (jährlich absolviert) und Tagesverfassung des AGT",
+                     "Aus Pressluftatmer, Träger und Material",
+                     "Es gibt keine Voraussetzungen zur Tauglichkeit"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Warum ist ein Pressluftatmer mit einer Restdruckwarneinrichtung ausgestattet?",
+                options: [
+                     "Um sich akustisch bei null Sicht bemerkbar machen zu können",
+                     "Um erinnert zu werden, dass dem Gruppenkommandanten der Flaschendruck über Funk mitgeteilt werden muss",
+                     "Um auf den zu Ende gehenden Atemluftvorrat aufmerksam zu machen"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Welche Aufgabe hat der Atemschutz-Rettungstrupp beim Atemschutzeinsatz?",
+                options: [
+                     "Er muss für Notfälle bereitstehen und kann, wenn notwendig unterstützende Tätigkeiten durchführen",
+                     "Er ist für die Rettung von Personen über Leitern zuständig",
+                     "Er ist für die Reserveluft zuständig"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wo meldet sich der, aus dem Einsatz kommende Atemschutztrupp zurück?",
+                options: [
+                     "Beim Atemschutzsammelplatz",
+                     "Bei dem für den Atemschutzeinsatz zuständigen Gruppenkommandanten mit der Außenüberwachung",
+                     "Bei der Einsatzleitung"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Was ist zu tun, wenn durch die Atemmaske oder Lungenautomat Rauch eindringt?",
+                options: [
+                     "Luft anhalten und Einsatzstelle sofort verlassen",
+                     "Wenn vorhanden, mittels Zuschuss(Dusch)knopf am Lungenautomaten Atemluft zuschießen und Einsatzstelle sofort gemeinsam (ganzer AS-Trupp) verlassen",
+                     "Lungenautomat abschrauben und wechseln"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "In welchen Abständen ist der ÖFAST in der Feuerwehr durchzuführen?",
+                options: [
+                     "jährlich (+ 5 Monate)",
+                     "einmal im Jahr (+/- 4 Monate)",
+                     "jährlich (+/- 3 Monate)"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Wie ist die Allgemeine Vorgehensweise in Räumen mit wenig bzw. NULL Sicht?",
+                options: [
+                     "Seitenkriechgang, der Wand entlang, Rauchabzug herstellen, Rückzug sichern, zusammenbleiben",
+                     "Einzeln eintreten, Rauchabzug herstellen",
+                     "Im Trupp zusammenbleiben und der Wand entlang aufrecht gehen, Rauchabzug herstellenRichtlinie Atemschutzleistungsprüfung"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            }
+        ],
+        silber: [
+            {
+                question:  "Was ist Kohlenstoffmonoxid für ein Atemgift?",
+                options: [
+                     "Erstickend wirkendes Gift",
+                     "Blut und Nervengift",
+                     "Reiz- und Ätzgift"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wie kann man Sauerstoffmangel in der Umgebungsluft erkennen?",
+                options: [
+                     "nur mit speziellen Messgeräten",
+                     "an der blauen Färbung der Luft",
+                     "durch Kerzen Schnelltests"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Woran erkennt man eine gesunde Atemtechnik?",
+                options: [
+                     "Am ruhigen Ein- und Ausatmen",
+                     "An der langsamen Brustatmung",
+                     "An der beständigen, pausenlosen Atmung unter Beachtung der Atemgymnastik"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Welche Folge kann eine gestörte Atmung (Atemkrise) hervorrufen?",
+                options: [
+                     "Rauschzustände",
+                     "Lebensgefahr",
+                     "Depressionen"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Was geschieht mit der Atemluft in der Lunge?",
+                options: [
+                     "Teile des Stickstoffes werden vom Blut aufgenommen, Kohlendioxid abtransportiert",
+                     "Sauerstoff wird vom Blut aufgenommen, Kohlenstoffdioxid vom Blut in die Lunge (Gasaustausch) abgegeben",
+                     "Kohlendioxid (CO 2) wird an das Blut übertragen, um das Atemzentrum anzuregen."
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "In welcher Form können atemschädliche Stoffe in der Luft vorkommen?",
+                options: [
+                     "Nur gasförmig",
+                     "Als Partikel, Gase und Dämpfe",
+                     "Nur in Kombination mit Aerosolen"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wann muss ein Atemschutzgeräteträger zur ärztlichen Nachuntersuchung (AKL-Test)?",
+                options: [
+                     "jährlich",
+                     "Bis zum 40.Lebensjahr alle 5 Jahre, zwischen 40. und 50. Lebensjahr alle 3 Jahre, ab dem 50. Lebensjahr alle 2 Jahre oder nach schwerer Erkrankung",
+                     "Alle 3 Jahre bis zum 40. Lebensjahr, alle 2 Jahre bis zum 60 Lebensjahr, danach jährlich"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wie kann man einer Atemkrise entgegenwirken?",
+                options: [
+                     "durch schnelle Atemzüge",
+                     "durch ruhiges, tiefes Ein- und Ausatmen",
+                     "durch Drücken des Zuschussknopfes am Lungenautomaten"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wie viel Luft veratmet ein AGT durchschnittlich bei einem Atemschutzeinsatz?",
+                options: [
+                     "20 - 30 Liter/min",
+                     "60 – 90 Liter/min",
+                     "40 – 50 Liter/minRichtlinie Atemschutzleistungsprüfung"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Was hat auf jedem Pressluftatmer (PA) zumindest montiert zu sein?",
+                options: [
+                     "ein Notsignalgeber",
+                     "Keile und Bandschlingen",
+                     "ein Haltegurt mit zusätzlichen Karabinern"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Warum werden bei der Feuerwehr Kombinationsfilter verwendet?",
+                options: [
+                     "Weil er in Kombination mit der Atemschutzmaske Schutz vor mehreren Gase bietet",
+                     "Damit ein Schutz vor Gasen und Partikeln gegeben ist",
+                     "Kombinationsfilter sind mit allen Masken kompatibel"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Schützen Filtergeräte gegen Sauerstoffmangel?",
+                options: [
+                     "Ja",
+                     "Bedingt",
+                     "Nein"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Wogegen schützt die Brandfluchthaube?",
+                options: [
+                     "gegen Brandrauch ausschließlich Kohlenstoffmonoxid",
+                     "Nur gegen Kohlenstoffmonoxid",
+                     "Kurzzeitig gegen verschiedene Atemgifte einschließlich Kohlenstoffmonoxid"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Welcher Bauteil der Atemmaske sorgt für die Sprechverbindung nach außen?",
+                options: [
+                     "Die Sprechmembrane",
+                     "Das Mikrofon bei Funkmasken",
+                     "Der Hohlraum in der Innenmaske"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Welches Ventil ist für die Dichtheit der Maske besonders wichtig?",
+                options: [
+                     "Das Einatemventil",
+                     "Das Ausatemventil",
+                     "Das Steuerventil"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wer führt die Pflege der Atemmasken nach der Verwendung durch?",
+                options: [
+                     "Der Atemschutzwart mit Unterstützung der Geräteträger",
+                     "Der Geräteträger",
+                     "Der Gerätemeister, der Atemschutzwart überwacht und prüft."
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Warum sind Atemmasken mit einer Innenmaske ausgestattet?",
+                options: [
+                     "Zur Erleichterung der Wartung",
+                     "Um eine angenehme Luftführung zu erreichen",
+                     "Verkleinerung des Totraumes, das Beschlagen der Sichtscheibe wird weitgehend verhindert"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Wie viele AS-Trupps können mit einem Außenüberwachungsgerät (Modell Steiermark) zeitgleich überwacht werden?",
+                options: [
+                     "Zwei",
+                     "Drei",
+                     "Vier"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Welche Funktion hat der Lungenautomat?",
+                options: [
+                     "Abgabe der Atemluft an den Atemschutzgeräteträger entsprechend seines Bedarfs",
+                     "Er verringert den Widerstand beim Atmen.",
+                     "Er reduziert den Luftdruck von Hochdruck auf Niederdruck."
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Darf mit einem Pressluftatmer getaucht werden?",
+                options: [
+                     "Nur bis fünf Meter.",
+                     "Nein.",
+                     "Ja, aber nur mit Tauchmaske."
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wer darf defekte Atemschutzgeräte und Atemmasken reparieren?",
+                options: [
+                     "Die Hersteller und autorisierte Atemschutzwerkstätten (z.B.: LFV Steiermark)",
+                     "Der Atemschutzwart der Feuerwehr",
+                     "Jeder mit Atemschutzgeräteträger LehrgangRichtlinie Atemschutzleistungsprüfung"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Welches Volumen / Druck können Pressluftflaschen für Atemschutzgeräte haben?",
+                options: [
+                     "4 Liter / 200 bar; 6 Liter / 300 bar; 6,8 Liter / 300 bar",
+                     "2 Liter / 300 bar; 4 Liter / 300 bar; 15 Liter / 200 bar",
+                     "6,8 Liter / 200 bar; 6 Liter / 200 bar; 4 Liter / 300 bar"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Kann ein (Voll)Bartträger als Atemschutzgeräteträger eingesetzt werden?",
+                options: [
+                     "Ja, mit Überdruckmaske",
+                     "Es ist egal ob man einen Vollbart hat",
+                     "Nein, der dichte Sitz der Atemmaske ist nicht mehr gewährleistet"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Im Trupp löst ein Notsignalgeber aus. Was ist sofort zu tun?",
+                options: [
+                     "Einsatzauftrag abschließen, danach sich um das Signal kümmern",
+                     "Einsatzauftrag abbrechen, Kontakt mit dem Truppmitglied aufnehmen, Hilfe leisten",
+                     "Trupp teilen, ein Mitglied kümmert sich um das Notsignal, das andere setzt den Einsatzauftrag fort"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wann muss der GK als Außenüberwacher mit dem Atemschutztrupp Funkkontakt aufnehmen?",
+                options: [
+                     "Alle 5 Minuten um den Flaschendruck zu kontrollieren",
+                     "Bei Einsatzbeginn (Funkprobe); gegebenenfalls bei 20, immer bei 10, und 0 Minuten Resteinsatzzeit",
+                     "Bei Einsatzbeginn und bei Einsatz Ende"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            },
+            {
+                question:  "Wer trägt für die Außenüberwachung des AS-Trupps die Verantwortung?",
+                options: [
+                     "Der Gruppenkommandant",
+                     "Der Leiter des Atemschutzsammelplatzes",
+                     "Der Atemschutzbeauftragte der Feuerwehr"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Mindestalter für Atemschutzgeräteträger?",
+                options: [
+                     "20 Jahre ohne Grundausbildung",
+                     "16 Jahre mit Grundausbildung",
+                     "vollendetes 18. Lebensjahr"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Was ist vor Beendigung des Atemschutzeinsatzes (z.B. Brandeinsatz) zu beachten?",
+                options: [
+                     "Alarmierung des Atemschutzbereichsbeauftragten",
+                     "Organisation von Speisen, Getränken und Rauchwaren",
+                     "Eine Grobdekontamination ist noch am Einsatzort durchzuführen"
+                ],
+                correct: [
+                    false,
+                    false,
+                    true
+                ]
+            },
+            {
+                question:  "Warum soll jedes mit Atemschutz ausgestattete Feuerwehrfahrzeug mit einem Außenüberwachungsgerät ausgestattet sein?",
+                options: [
+                     "Damit jeder Atemschutztrupp von Beginn des Einsatzes an überwacht werden kann",
+                     "Damit ausreichend Reservegeräte vorhanden sind",
+                     "Damit eine Funkverbindung zu den eingesetzten Atemschutztrupps aufgebaut werden kann"
+                ],
+                correct: [
+                    true,
+                    false,
+                    false
+                ]
+            },
+            {
+                question:  "Wann hat ein in Bereitschaft stehender AS-Rettungstrupp die Atemmaske nicht aufgesetzt?",
+                options: [
+                     "Wenn sich nur ein Angriffstrupp im Gefahrenbereich befindet",
+                     "Wenn durch die Witterung oder die Technik der Atemmaske, die Sichtscheibe innen beschlägt",
+                     "Wenn eine Lagerung in der Maskendose möglich istRichtlinie Atemschutzleistungsprüfung"
+                ],
+                correct: [
+                    false,
+                    true,
+                    false
+                ]
+            }
+            ],
+        gold: [
+            {
+              question:  "Was steht im oberen Teil der orangen Warntafel (Gefahrguttransport)?",
+              options: [
+                   "Gefahrnummer",
+                   "Stoffnummer",
+                   "Gefährliche Güternummer"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Was bedeutet ein “X” vor der Gefahrenummer?",
+              options: [
+                   "Es bezeichnet, das der Stoff in gefährlicher Weise mit Wasser reagiert",
+                   "Der Stoff kann mit Wasser in Berührung kommen",
+                   "Der Stoff darf nicht mit Luft in Berührung komme"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Wann müssen Pressluftflaschen aus Stahl von einem autorisierten Sachverständigen grundsätzlich überprüft werden?",
+              options: [
+                   "Alle 5 Jahre",
+                   "Alle 6 Jahre",
+                   "Alle 10 Jahre"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Zu welcher Schutzstufe gehört der gasdichte Chemikalienschutzanzug?",
+              options: [
+                   "Schutzstufe 1",
+                   "Schutzstufe 3",
+                   "Schutzstufe 2"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Wie groß ist die Mindestabsperrgrenze bei Gefahrguteinsätzen?",
+              options: [
+                   "mindestens 10 Meter",
+                   "30 – 60 Meter",
+                   "maximal 30 Meter"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Atemluftversorgung benötigt man bei gasdichten Chemiekalienschutzanzügen?",
+              options: [
+                   "Pressluftatmer mit akustischer Restdruckwarnung, zusätzlich sind Druckluftschlauchgeräte möglich",
+                   "Pressluftatmer mit manueller Restdruckwarnung und doppelten Pressluftflaschen",
+                   "Fremdversorgung mit Restdruckwarnung"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Wann ist ein Schutzanzug der Schutzstufe 3 zu überprüfen?",
+              options: [
+                   "Nach jeder Verwendung, ansonsten alle 5 Jahre",
+                   "Nur nach Einsätzen, zusätzlich alle 2 Jahre",
+                   "Halbjährlich"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "In welchen Zeitabständen müssen Pressluftatmer einer Grundüberholung unterzogen werden?",
+              options: [
+                   "Jährlich",
+                   "Alle 6; 9 bzw. 10 Jahre, je nach Hersteller und Type",
+                   "Nach persönlichem Dafürhalten des Atemschutzwartes"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Auf welchen Mitteldruck (bar) reduziert der Druckminderer durchschnittlich den Hochdruck beim Pressluftatmer?",
+              options: [
+                   "5 bis 9 bar",
+                   "4 bis 8 bar",
+                   "6 bis 9 bar"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Wem kann der Gruppenkommandant die Bedienung des Außenüberwachungsgerätes (AÜwG) delegieren?",
+              options: [
+                   "Seinem Melder oder Maschinisten",
+                   "Dem Melder des Einsatzleiters",
+                   "Dem Strahlrohrführer"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Ein ASTRF hört nach 25 Minuten Einsatzzeit das akustische Warnsignal des ASTRM2. Die Kontrolle der Manometer ergibt beim ASTRF: 70 bar, ASTRM1: 110 bar und ASTRM2: 85bar. Was ist zu tun?",
+              options: [
+                   "Der Trupp zieht sich zurück, weil der ASTRF einen Manometerdefekt beim Pressluftatmer des ASTRM2 vermutet",
+                   "Der Trupp verbleibt im Einsatz, weil die Manometerkontrolle einen ausreichenden Luftvorrat bei",
+                   "Der Trupp setzt den Einsatz fort, bis bei allen Geräten das akustische Warnsignal anspricht"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Wer ordnet den Beginn des Druckbelüftungsvorganges an?",
+              options: [
+                   "Der Atemschutztruppführer (ASTRF)",
+                   "Der Einsatzleiter",
+                   "Der Gruppenkommandant"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Wofür steht die “GAMS“ Regel der Feuerwehr?",
+              options: [
+                   "Gefahr erkennen, Absichern, Menschenrettung, Schutzausrüstung anlegen",
+                   "Gefahr erkennen, Absperren, Messen, Spezialkräfte anfordern",
+                   "Gefahr erkennen, Absperren, Menschenrettung, Spezialkräfte anfordern"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Was bedeutet die „3A Regel“?",
+              options: [
+                   "Abschirmung groß halten, Abstand verkürzen, Aufenthaltszeit verlängern",
+                   "Möglichst gute Abschirmung, großen Abstand und kurze Aufenthaltszeit",
+                   "Abschirmung entfernen, Abstand verkürzen, Aufenthaltszeit kurz halten"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Ein Angriffstrupp entscheidet in einen Raum, gefüllt mit dichtem und heißen Brandrauch vorzugehen.",
+              options: [
+                   "Den heißen Brandrauch sofort mit Sprühstrahl bis zur Rauchuntergrenze kühlen",
+                   "Mit Vollstrahl den Brandherd zu treffen versuchen",
+                   "Einige Minuten warten, wie sich die Lage entwickelt"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Umstände schließen einen Innenangriff aus?",
+              options: [
+                   "Das Gebäude ist nicht stromlos geschalten",
+                   "Wenn die mögliche Gefährdung des AS-Trupps nicht dafür spricht (Einsturz-, Explosionsgefahr usw.)",
+                   "Im Gebäude befinden sich keine Menschen mehr"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Wer gibt den Befehl für den Einsatz des Atemschutztrupps in der Löschgruppe?",
+              options: [
+                   "Der Gruppenkommandant",
+                   "Der Einsatzleiter",
+                   "Der Leiter des Atemschutzsammelplatzes"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Farbkennzeichnung am Flaschenhals haben Acetylengasflaschen in Österreich?",
+              options: [
+                   "Weiß",
+                   "Rot",
+                   "Kastanienbraun"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Mit welcher Farbe sind am Flaschenhals Druckgasflaschen für brennbare Gase, außer Acetylen, gekennzeichnet?",
+              options: [
+                   "Weiß",
+                   "Rot",
+                   "Kastanienbraun"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question: "Wieviel von seiner Tragfähigkeit verliert ein Stahlträger bei einer Temperatur von 700 Grad Celsius?", 
+              options: [
+                   "Nichts",
+                   "25 %",
+                   "Zwei Drittel"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Womit kann eine explosionsfähige Atmosphäre am Einsatzort nachgewiesen werden?",
+              options: [
+                   "Mit einem Explosimeter",
+                   "Mit einem Kompressor",
+                   "Mit einer Waage"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Worüber gibt die Stoffnummer (UN-Nummer) Auskunft?",
+              options: [
+                   "Name des Fahrzeuges",
+                   "über die Menge",
+                   "Kennzeichnung des Stoffes"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Was ist beim Einsatz eines Atemschutztrupps auf dem Außenüberwachungsgerät zu notieren bzw. zu beachten?",
+              options: [
+                   "Einsatzleiter, Gruppenkommandant, Zeiten, Flaschendrücke, Rettungstrupp, Einsatzadresse",
+                   "Verantwortlicher, Einsatzabschnitt, Namen der Truppmitglieder,Geräteart, Einsatzbeginn bzw. Ende, Soll-Rückzugsdruck, niedriegste Flaschendrücke, Befehl, Lagemeldungen, Rettungstrupp und dessen niedrigsten Flaschendruck",
+                   "Sammelplatzleiter, Einsatzleiter, Namen der Truppmitglieder, Lagemeldungen, Rettungstrupp, Zeiten, Flaschendrücke"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Was ist beim Erkennen von „Gefahr in Verzug“ zu tun?",
+              options: [
+                   "Sofortiger Rückzug der Trupps, Meldung beim Gruppenkommandanten",
+                   "Gruppenkommandanten fragen, ob Rückzug durchgeführt werden soll",
+                   "Einsatzleiter bescheid geben"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welcher Sicherheitsabstand ist bei der Brandbekämpfung im Bereich elektrischer Anlagen mit Spannungen bis 1000 Volt beim Einsatz von C-Mehrzweckstrahlrohren und reinem Wasser einzuhalten?",
+              options: [
+                   "Sprühstrahl 1 m - Vollstrahl 5 m",
+                   "Sprühstrahl 5 m - Vollstrahl 1 m",
+                   "Sprühstrahl 5 m - Vollstrahl 10 m"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welches Löschmittel darf bei Fettbränden nicht eingesetzt werden?",
+              options: [
+                   "Fettbrandlöscher",
+                   "Wasser",
+                   "Löschpulver"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Strahlrohreinstellung wird vorzugsweise bei Innenangriffen eingesetzt?",
+              options: [
+                   "Vollstrahl",
+                   "Spülen",
+                   "Sprühstrahl"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Welche Druckzonen bilden sich bei einer Verbrennung?",
+              options: [
+                   "gefährliche und ungefährliche Zone",
+                   "Neutrale Zone, Überdruckzone, Unterdruckzone",
+                   "Grüne, gelbe und rote Zone"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Wann ist die komplette Einsatzbekleidung „E1“ zu tragen?",
+              options: [
+                   "Bei jedem Einsatz und jeder Übung mit Brandgefahr",
+                   "Bei jedem Einsatz",
+                   "nur beim Atemschutzeinsatz"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Wie kann man Säuredämpfe niedergeschlagen?",
+              options: [
+                   "mit Feuerpatschen",
+                   "mit Wassersprühstrahl",
+                   "mit Laugenpulver"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Stoffe neigen zu Selbstentzündung?",
+              options: [
+                   "Phosphor, in Öl getränkte Putzwolle, feuchtes Heu",
+                   "Benzin, Benzol, Kerosin, Teer, Bitumen",
+                   "Seifen, Putzmittel, Bleichmittel"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Prüfungen hat der Atemschutzwart monatlich durchzuführen?",
+              options: [
+                   "Sichtkontrolle, ob die Beladung in Ordnung ist",
+                   "Kontrolle der Atemschutzgeräte (PA, Notsignalgeber, Atemmaske und Filter), den Druck der Reserveflaschen, das Außenüberwachungsgerät, die Wärmebildkamera",
+                   "Sicht-, Dicht- und Funktionsprüfung"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Bei welchem Brand ist die Kohlenstoffmonoxidbildung besonders groß?",
+              options: [
+                   "Bränden in geschlossenen Räumen",
+                   "bei Metallbränden",
+                   "bei Waldbränden"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Bekleidung ist für die Menschenrettung bei Einsätzen mit gefährlichen Stoffen im Freien zumindest zu tragen?",
+              options: [
+                   "Chemikalienschutzanzug Stufe 2",
+                   "Einsatzoverall mit Filtergerät",
+                   "Schutzbekleidung für die Brandbekämpfung, Einmalhandschuhe, darüber Chemikalienschutzhandschuhe und Chemikalien beständige Sicherheitsstiefel, Feuerschutzhaube"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Welche Bekleidung ist bei Einsätzen am Brandgeschehen zu tragen?",
+              options: [
+                   "Hitzeschutzanzug nach EN 1486",
+                   "Einsatzoverall",
+                   "Schutzbekleidung für die Brandbekämpfung nach EN 469"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          },
+          {
+              question:  "Was versteht man unter einem Einsatzabschnitt?",
+              options: [
+                   "zeitliche Einteilung in Erkundungsphase, Verteidigungs- und Angriffsphase",
+                   "Teil einer Einsatzstelle, der von der Einsatzleitung einer Einheit zugewiesen wird",
+                   "Bereiche an einer Einsatzstelle, in der Feuerwehren eines BFV arbeiten"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Welche giftigen Stoffe und Gefahren gehen von brennenden PVC aus?",
+              options: [
+                   "Salzsäuredämpfe, Bildung heißer Tropfen",
+                   "Sichtbehinderung durch weißen Rauch und grelle Flammen",
+                   "Unsichtbare Flammen"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Von wievielen Personen darf eine 2-teilige Schiebeleiter gleichzeitig bestiegen werden ?",
+              options: [
+                   "Max. 1 Person",
+                   "Von 1 Person, ausgenommen bei Menschenrettung von 2 Personen (= Retter und zu rettende Person)",
+                   "Max. 3 Personen"
+              ],
+              correct: [
+                  false,
+                  true,
+                  false
+              ]
+          },
+          {
+              question:  "Gegen welches gefährliche Atemgift schützt ein Filter vom Typ „ABEK2-P3“ nicht?",
+              options: [
+                   "Kohlenstoffmonoxid",
+                   "Blausäuredämpfe",
+                   "Chlorgas"
+              ],
+              correct: [
+                  true,
+                  false,
+                  false
+              ]
+          },
+          {
+              question:  "Welche Maßnahmen sind bei Druckgefäßen im Brandgeschehen zu treffen?",
+              options: [
+                   "Druckgefäße bergen und im Freien in ein Kühlbecken ablegen",
+                   "Kennzeichnung ablesen, um Inhalt zu indentifizieren",
+                   "Aus sicherer Deckung heraus, kühlen"
+              ],
+              correct: [
+                  false,
+                  false,
+                  true
+              ]
+          }
+            ]
+        };
+        
+        const examQuestionCnt = [ 10, 15, 15, 20 ];
+        const examTime = [ 10, 10, 10, 10 ];
+
+        let selectedDifficulty = '';
+        let currentQuestions = [];
+        let currentQuestionIndex = 0;
+        let correctAnswersCount = 0;
+        let startTime = 0;
+        let timerInterval = null;
+
+        let checkAnswers = true;
+        let examMode = false;
+        let startTimeReal = 0;
+        
+        function showSnack(text) {
+          var x = document.getElementById("snackbar");
+          x.innerText = text;
+          x.className = "show";
+          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 1000);
+        }
+        
+        function shuffle(array) {
+          let currentIndex = array.length;
+          while (currentIndex != 0) {
+            let randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            [array[currentIndex], array[randomIndex]] = [
+              array[randomIndex], array[currentIndex]];
+          }
+        }
+        
+        function addMinutes(date, minutes) {
+            return new Date(date + minutes*60000);
+        }
+
+        // Start Quiz
+        function startQuiz(difficulty) {
+            selectedDifficulty = difficulty;
+            examMode = document.getElementById('examSim').checked
+            var idx_step = 0;
+            
+            currentQuestions = [...allQuestions.bronze];
+            
+            if(selectedDifficulty == 'silber_gkdt') {
+                currentQuestions = currentQuestions.concat(allQuestions.silber);
+                /*console.log(currentQuestions)*/
+                idx_step = 1;
+            }
+            else if(selectedDifficulty == 'silber') {
+                currentQuestions = [...allQuestions.silber];
+                idx_step = 2;
+            }
+            else if(selectedDifficulty == 'gold') {
+                currentQuestions = currentQuestions.concat(allQuestions.silber, allQuestions.gold);
+                idx_step = 3;
+            }
+            
+            if(examMode) {
+                shuffle(currentQuestions);
+                currentQuestions = currentQuestions.slice(0, examQuestionCnt[idx_step]);
+            }
+            
+            currentQuestionIndex = 0;
+            correctAnswersCount = 0;
+            startTimeReal = Date.now();
+            startTime = examMode ? addMinutes(startTimeReal, examTime[idx_step]) : startTimeReal;
+
+            document.getElementById('start-screen').style.display = 'none';
+            document.getElementById('quiz-screen').style.display = 'block';
+            displayQuestion();
+            startTimer();
+        }
+
+        // Display the current question
+        function displayQuestion() {
+            const question = currentQuestions[currentQuestionIndex];
+            document.getElementById('question-text').innerText = question.question;
+            const optionsContainer = document.getElementById('answer-options');
+            optionsContainer.innerHTML = '';
+            question.options.forEach((option, index) => {
+                const label = document.createElement('label');
+                label.classList.add('answer-option');
+                label.innerHTML = `
+                    <input type="checkbox" id="option${index}" data-index="${index}">
+                    ${option}
+                `;
+                optionsContainer.appendChild(label);
+            });
+
+            document.getElementById('next-question-btn').innerText = examMode ? 'Nächste Frage' : 'Überprüfen';
+            document.getElementById('next-question-btn').style.display = 'inline-block';
+            document.getElementById('text').innerText = `Frage ${currentQuestionIndex + 1} von ${currentQuestions.length}`;
+            checkAnswers = true;
+        }
+        
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < currentQuestions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
+        }
+
+        // Handle next question button click
+        function buttonNext() {
+            if(checkAnswers) {
+                const question = currentQuestions[currentQuestionIndex];
+                const selectedOptions = [...document.querySelectorAll('#answer-options input:checked')].map(input => parseInt(input.getAttribute('data-index')));
+                const unselectedOptions = [...document.querySelectorAll('#answer-options input:not(:checked)')].map(input => parseInt(input.getAttribute('data-index')));
+                const correct = selectedOptions.every(index => question.correct[index]);
+                const incorrect = unselectedOptions.every(index => !question.correct[index]);
+                
+                if (correct && incorrect) {
+                    correctAnswersCount++;
+                    if(!examMode) {
+                        showSnack("Richtig!");
+                    }
+                    nextQuestion(); 
+                } else {
+                    if(examMode) {
+                        nextQuestion(); 
+                    } else {
+                        showFeedback();
+                        checkAnswers = false;
+                    }
+                }
+            } else {
+                checkAnswers = true;
+                nextQuestion();
+            }
+        }
+
+        // Show feedback for answers (color only)
+        function showFeedback() {
+            const question = currentQuestions[currentQuestionIndex];
+
+            // Mark answers with green or red based on correctness
+            question.options.forEach((option, index) => {
+                const isCorrect = question.correct[index];
+                const optionLabel = document.querySelector(`#option${index}`).parentNode;
+                optionLabel.style.color = isCorrect ? 'green' : 'red'; // Grün für richtig, Rot für falsch
+            });
+            
+            document.getElementById('next-question-btn').innerText = 'Nächste Frage';
+        }
+        
+        function pad(num, size) {
+            num = num.toString();
+            while (num.length < size) num = "0" + num;
+            return num;
+        }
+
+        // Start timer
+        function startTimer() {
+            const timerDisplay = document.getElementById('timer');
+            timerInterval = setInterval(() => {
+                if(examMode) {
+                    if((startTime - Date.now()) <= 0) {
+                        endQuiz();
+                    }
+                    var delta_ms = startTime - Date.now();
+                    var sec = Math.floor(delta_ms / 1000) % 60;
+                    var minute = Math.floor(delta_ms / 1000 / 60);
+                    
+                    timerDisplay.innerText = `${pad(minute, 2)}:${pad(sec, 2)}`;
+                } else {
+                    var delta_ms = Date.now() - startTime;
+                    var sec = Math.floor(delta_ms / 1000) % 60;
+                    var minute = Math.floor(delta_ms / 1000 / 60);
+                    
+                    timerDisplay.innerText = `${pad(minute, 2)}:${pad(sec, 2)}`;
+                }
+            }, 1000);
+        }
+
+        // End Quiz
+        function endQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+
+            document.getElementById('correct-answers').innerText = `Richtige Antworten:\n ${correctAnswersCount} von ${currentQuestions.length}`;
+            /*const totalTime = Math.floor((Date.now() - startTime) / 1000);*/
+            var delta_ms = Date.now() - startTimeReal;
+            var sec = Math.floor(delta_ms / 1000) % 60;
+            var minute = Math.floor(delta_ms / 1000 / 60);
+            totalTime = `${pad(minute, 2)}:${pad(sec, 2)}`;
+            
+            document.getElementById('time-taken').innerText = `\nZeit: ${totalTime}`;
+        }
+
+        // Restart quiz
+        function restartQuiz() {
+            document.getElementById('result-screen').style.display = 'none';
+            document.getElementById('start-screen').style.display = 'block';
+        }
+
+    </script>
+
+</body>
+</html>
