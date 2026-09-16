@@ -92,14 +92,13 @@
             font-size: 1.25rem;
             transition: background-color 0.3s;
             margin-top: 20px;
-            margin-bottom: 2cm;
+            margin-bottom: 1cm;
             width: 80%;
         }
         
         .button-gold:hover {
             background-color: #d8c49a;
         }
-        
         
         .button {
             background-color: #A72920;
@@ -110,14 +109,19 @@
             border-radius: 50px;
             cursor: pointer;
             font-size: 1.25rem;
+            display: inline-block;
             transition: background-color 0.3s;
             margin-top: 20px;
-            width: 100%;
-            /*max-width: 250px;*/
+            margin-bottom: 1.5cm;
+            width: 80%;
         }
 
         .button:hover {
             background-color: #c34140;
+        }
+        
+        a {
+            text-decoration: none;
         }
 
 
@@ -302,7 +306,6 @@
         }
 
 
-
         /*------ ADDED CSS ---------*/
         .slider:after
         {
@@ -322,6 +325,8 @@
           content:'Prüfung simulieren';
           color: #A72920;
         }
+        
+
 
     </style>
 </head>
@@ -333,6 +338,8 @@
         <h1>Atemschutz</h1>
         <h2 class=bottom-space>Leistungsprüfung</h2>
         
+        
+        
         <label class="switch">
         <input type="checkbox" id="examSim">
         <div class="slider round"></div>
@@ -342,6 +349,9 @@
         <button class="button-silver" onclick="startQuiz('silber')">SILBER</button>
         <button class="button-silver" onclick="startQuiz('silber_gkdt')">SILBER (GKDT)</button>
         <button class="button-gold" onclick="startQuiz('gold')">GOLD</button>
+        
+        <a href="aslp_calc.html" class="button">Rechenbeispiele GKDT</a>
+        
         <div class="author">v1.0 &copy; Thomas Schwar</div>
         <div class="author">nach RL 5.2/16-2007 vom 24.03.2022</div>
     </div>
